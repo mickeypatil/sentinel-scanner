@@ -81,7 +81,8 @@ streamlit run dashboard/app.py
 
 ## 🖥️ Demo Screenshot
 
-![Sentinel Scanner UI](https://raw.githubusercontent.com/mickeypatil/sentinel-scanner/main/assets/screenshot.png)
+![Sentinel Scanner UI](https://raw.githubusercontent.com/mickeypatil/sentinel-scanner/main/assets/screenshot1.png)
+(https://raw.githubusercontent.com/mickeypatil/sentinel-scanner/main/assets/screenshot2.png)
 
 ---
 
