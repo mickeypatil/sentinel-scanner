@@ -1,45 +1,115 @@
 # 🔍 Sentinel Scanner
 
-Sentinel Scanner is a simple cybersecurity tool built with **Python** and **Streamlit**.  
-It scans a target (IP or domain) for **open ports**, detects the **running services**, and searches for related **CVEs** using the official **NVD API**.
+A lightweight cybersecurity toolkit for basic **port scanning**, **service detection**, and **vulnerability lookup using CVE API**.  
+Built with Python and Streamlit for an interactive and easy-to-use dashboard.
 
 ---
 
-## 🚀 Features
+## ⚙️ Features
 
-- ✅ Port scanner (ports 1–1024)
-- 📡 Service banner grabbing
-- 🛡️ CVE lookup using NVD API
-- 📊 Streamlit web dashboard
-- 🔑 Uses your API key (secure config.ini file)
+- 🚀 Fast TCP Port Scanning (1-1024)
+- 🔎 Service Banner Grabbing
+- 🛡️ CVE Lookup for Detected Services (via NVD API)
+- 📊 Streamlit Dashboard for Interactive UI
+- ✅ Clean & Minimal Python Codebase
 
 ---
 
-## 📂 Folder Structure
+## 📁 Project Structure
 
+```
 sentinel-scanner/
+│
 ├── scanner/
-│ ├── port_scanner.py
-│ ├── cve_lookup.py
-│ └── vuln_lookup.py
+│   ├── port_scanner.py
+│   ├── cve_lookup.py
+│   ├── vuln_lookup.py
+│   └── __pycache__/
+│
 ├── dashboard/
-│ └── app.py
-├── config.ini ← (your NVD API key)
+│   └── app.py
+│
+├── config.ini
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
-## 🛠️ How to Run It
+## 🧑‍💻 How to Run It
 
 ### 1. Clone the project
+
 ```bash
 git clone https://github.com/mickeypatil/sentinel-scanner.git
 cd sentinel-scanner
+```
 
 ### 2. Create virtual environment
+
 ```bash
-Copy
-Edit
 python -m venv venv
-venv\Scripts\activate   # (Use source venv/bin/activate if on Linux/Mac)
+venv\Scripts\activate  # (or use source venv/bin/activate on Linux/Mac)
+```
+
+### 3. Install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Add your NVD API Key
+
+1. Go to [https://nvd.nist.gov/developers](https://nvd.nist.gov/developers)
+2. Sign up and get your API key.
+3. Create a file named `config.ini` and paste this inside:
+
+```ini
+[NVD]
+api_key = YOUR_API_KEY_HERE
+```
+
+---
+
+### 5. Run the Streamlit dashboard
+
+```bash
+streamlit run dashboard/app.py
+```
+
+---
+
+## 🖥️ Demo Screenshot
+
+![Sentinel Scanner UI](https://raw.githubusercontent.com/mickeypatil/sentinel-scanner/main/assets/screenshot.png)
+
+---
+
+## 💡 Example Output
+
+- ✅ Port 22 open | Service: SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13  
+  🔍 Searching CVEs...  
+  🛑 CVE-2021-41617 | Severity: HIGH  
+  Improper privilege separation in OpenSSH before 8.8 could allow...
+
+---
+
+## 📌 Future Enhancements
+
+- Full TCP/UDP scanning
+- Export reports as PDF/CSV
+- Real-time CVSS scoring summary
+- Add WHOIS + GeoIP integration
+
+---
+
+## 👨‍💻 Author
+
+**Aryan Patil**  
+🔗 [GitHub Profile](https://github.com/mickeypatil)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
